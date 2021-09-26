@@ -1,4 +1,4 @@
-# [wishlist](https://kephircheek.github.io/wishlist/)
+# [wishlist](http://kephircheek.github.io/wishlist/)
 
 Create and share, no more.
 
