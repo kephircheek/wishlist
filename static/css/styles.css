@@ -1,0 +1,16 @@
+.welcome-header {
+  height: 30vh;
+  background-color: lightyellow;
+  display: grid;
+  align-content: end;
+}
+
+.welcome-quickstart {
+  height: 60vh;
+  background-color: lightgreen;
+}
+
+.welcome-footer {
+  height: 10vh;
+  background-color: cyan;
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wishwishwish</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <!-- Import Vue -->
+    <script src="https://unpkg.com/vue@next"></script>
+    <!-- Import Vue-Router -->
+    <script src="https://unpkg.com/vue-router@4.0.5/dist/vue-router.global.js"></script>
+    <!-- Import Axios -->
+    <script src="https://unpkg.com/axios@0.21.1/dist/axios.min.js"></script>
+    <!-- Import Dayjs -->
+    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+    <script src="https://unpkg.com/dayjs@1.8.21/plugin/relativeTime.js"></script>
+    <script>dayjs.extend(window.dayjs_plugin_relativeTime)</script>
+  </head>
+  <body style="text-align:center">
+    <div id="app"></div>
+
+    <!-- js modules -->
+    <script src="constants.js"></script>
+
+    <!-- Import directives -->
+    <script src="directives/vFocus.js"></script>
+    <script src="directives/vClickOutside.js"></script>
+    <script src="directives/vLongPress.js"></script>
+
+    <!-- Import Common components -->
+    <script src="components/DateTime.js"></script>
+
+    <!-- Import Welcome page components -->
+    <script src="components/WelcomeHeader.js"></script>
+    <script src="components/WelcomeQuickstart.js"></script>
+    <script src="components/WelcomeFooter.js"></script>
+    <script src="components/Welcome.js"></script>
+
+    <!-- Import Reservatin cart component -->
+    <script src="components/ReservationCart.js"></script>
+
+    <!-- Import Invintation page components -->
+    <script src="components/InviteCard.js"></script>
+    <script src="components/InviteSettings.js"></script>
+    <script src="components/WishInput.js"></script>
+    <script src="components/WishForm.js"></script>
+    <script src="components/WishCard.js"></script>
+    <script src="components/InviteWishlist.js"></script>
+    <script src="components/Invite.js"></script>
+
+    <!-- Import App -->
+    <script src="router.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
