@@ -12,6 +12,11 @@ const app = Vue.createApp({
       }),
     }
   },
+  created() {
+    // ping server to wake up because heroku
+    this.model.get()
+    .catch(this.reporter)
+  },
   methods: {
     reporter: (error) => {
       console.log(error);
