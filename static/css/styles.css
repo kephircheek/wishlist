@@ -1,16 +1,13 @@
+@import "https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css";
+
+.primary-font {
+}
+
 .welcome-header {
-  height: 30vh;
-  background-color: lightyellow;
-  display: grid;
-  align-content: end;
 }
 
 .welcome-quickstart {
-  height: 60vh;
-  background-color: lightgreen;
 }
 
 .welcome-footer {
-  height: 10vh;
-  background-color: cyan;
 }

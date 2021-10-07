@@ -32,9 +32,35 @@ const WelcomeQuickstart = {
   template:
   /*html*/
   `
-  <form class="welcome-quickstart" @submit.prevent="goToNewInvite" method="POST" v-focus>
-    <input v-model=inviteTitle type="text" name="title" placeholder="Event title" required>
-    <input type="submit" value="Create">
-  </form>
+  <div class="container columns">
+
+    <div class="column is-half is-flex is-flex-direction-column is-justify-content-center">
+
+      <div>
+        <p class="subtitle is-1">
+          Create and share
+          <br>
+          <span class="has-text-weight-bold">wishlists</span>
+           for free
+        </p>
+        <p class="subtitle is-5">Presents won’t be the same!</p>
+      </div>
+
+      <form class="field has-addons is-flex is-justify-content-center is-align-content-around my-5" @submit.prevent="goToNewInvite" method="POST" v-focus>
+        <div class="control">
+          <input class="input is-rounded" v-model=inviteTitle type="text" name="title" placeholder="Tom's Birthday" required>
+        </div>
+        <div class="control">
+          <input class="button is-rounded" type="submit" value="Create">
+        </div>
+      </form>
+
+    </div>
+
+    <div class="column is-half is-hidden-mobile">
+      <img src="static/img/welcome-img-presents.png">
+    </div>
+
+  </div>
   `
 }

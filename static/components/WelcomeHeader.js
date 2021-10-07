@@ -2,8 +2,14 @@ const WelcomeHeader = {
   template:
   /*html*/
   `
-  <div class="welcome-header">
-    <h1>Wish Wish Wish</h1>
-  </div>
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="container">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="">
+          <img src="static/img/givazza.svg" alt="givazza" width="112" height="28">
+        </a>
+      </div>
+    </div>
+  </nav>
   `
 }
