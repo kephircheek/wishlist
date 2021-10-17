@@ -95,17 +95,20 @@ const InviteCard = {
   /*html*/
   `
   <div>
+
     <div v-if="this._editing" v-click-outside="submit">
       <input type="text"  v-model="this._title" v-focus placeholder="Event title" />
       <textarea  v-model="this._details" placeholder="Details"></textarea>
       <input-date-time :value="this._deadline" @input="commitDeadline"/>
     </div>
+
     <div v-else v-longpress="edit">
-      <h1>{{ this._title }}</h1>
-      <p v-if="this._modified">Modified: <date-time :value="this._modified" /></p>
-      <p>{{ this._details }}</p>
-      <p v-if="this._deadline">Datetime: <date-time :value="this._deadline" /></p>
+      <h1 class="title is-1">{{ this._title }}</h1>
+      <p class="subtitle is-7" v-if="this._modified">Modified: <date-time :value="this._modified" /></p>
+      <p class="subtitle is-5">{{ this._details }}</p>
+      <p class="subtitle is-5" v-if="this._deadline"> <span class="icon"> <i class="far fa-calendar-minus"></i> </span> <date-time :value="this._deadline" /></p>
     </div>
+    
   </div>
   `,
 }

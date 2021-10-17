@@ -105,9 +105,20 @@ const ReservationCart = {
   template:
   /*html*/
   `
-  <h3>Reservation Cart</h3>
-  <input v-model="this._cancellationCode" placeholder="Cancellation code"/>
-  <button @click="cancel">Cancel</button>
+  <h3 class="title is-3">Reservation Cart</h3>
+
+  <div class="field has-addons is-justify-content-center">
+    
+    <div class="control is-expanded">
+      <input class="input" v-model="this._cancellationCode" placeholder="Cancellation code"/>
+    </div>
+
+    <div class="control">
+      <button class="button" @click="cancel">Cancel</button>
+    </div>
+
+  </div>
+
   <reservation-card v-for="reservation in this._reservations" :key="reservation.id" v-bind="reservation" />
   `
 }

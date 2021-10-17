@@ -18,8 +18,8 @@ const Welcome = {
   `
   <section class="hero is-fullheight">
     <header class="hero-head"><welcome-header/></header>
-    <main class="hero-body"><welcome-quickstart/></main>
-    <footer class="hero-foot"><welcome-footer/></footer>
+    <main class="hero-body py-0"><welcome-quickstart/></main>
+    <footer class="hero-foot has-background-light"><welcome-footer/></footer>
   </section>
   `
 }

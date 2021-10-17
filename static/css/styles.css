@@ -1,6 +1,18 @@
-@import "https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css";
+/* Givazza colors */
+.text-color-pink {
+  color: #FA26A0;
+}
 
-.primary-font {
+.text-color-black {
+  color: #393939;
+}
+
+.text-color-grey {
+  color: #C4C4C4;
+}
+
+.text-color-grey-light {
+  color: #F9F9F9;
 }
 
 .welcome-header {

@@ -34,7 +34,7 @@ const WelcomeQuickstart = {
   `
   <div class="container columns">
 
-    <div class="column is-half is-flex is-flex-direction-column is-justify-content-center">
+    <div class="column is-6 is-flex is-flex-direction-column is-justify-content-center">
 
       <div>
         <p class="subtitle is-1">
@@ -46,19 +46,21 @@ const WelcomeQuickstart = {
         <p class="subtitle is-5">Presents won’t be the same!</p>
       </div>
 
-      <form class="field has-addons is-flex is-justify-content-center is-align-content-around my-5" @submit.prevent="goToNewInvite" method="POST" v-focus>
+      <form class="field has-addons is-flex is-justify-content-center is-align-content-around mt-5" @submit.prevent="goToNewInvite" method="POST" v-focus>
         <div class="control">
-          <input class="input is-rounded" v-model=inviteTitle type="text" name="title" placeholder="Tom's Birthday" required>
+          <input class="input" v-model=inviteTitle type="text" name="title" placeholder="Tom's Birthday" required>
         </div>
         <div class="control">
-          <input class="button is-rounded" type="submit" value="Create">
+          <input class="button" type="submit" value="Create">
         </div>
       </form>
 
+      <p class="subtitle is-7">By clicking this button, I agree the <span><a class="text-color-pink" href="">user agreement</a></span></p>
+      
     </div>
 
-    <div class="column is-half is-hidden-mobile">
-      <img src="static/img/welcome-img-presents.png">
+    <div class="column is-6 is-hidden-mobile">
+      <img src="static/img/3dhands-1.png" width=500>
     </div>
 
   </div>
