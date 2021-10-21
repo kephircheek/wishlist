@@ -53,17 +53,17 @@ const Invite = {
 
       <div class="container columns mx-0">
 
-        <div class="column is-4 is-flex-direction-column is-justify-content-center">
+        <div class="column is-4 px-5 py-5 is-flex-direction-column is-justify-content-center">
           <invite-card @role="setRole" :role="role" :id="id" :title="title" :modified="modified"/>
         </div>  
 
-        <div class="column is-4 is-flex-direction-column is-justify-content-center">
+        <div class="column is-4 px-5 py-5 is-flex-direction-column is-justify-content-center">
           <invite-wishlist ref="inviteWishlist" :role="this._role" :id="id" @reservation="pushReservation"/>
         </div>  
 
-        <div class="column is-4 is-flex-direction-column is-justify-content-center">
-          <invite-settings v-if="this._role === Role.OWNER" :id="id" />
+        <div class="column is-4 px-5 py-5 is-flex-direction-column is-justify-content-center is-align-content-space-evenly">
           <reservation-cart ref="reservationCart" @cancellation="updateWishlist"/>
+          <invite-settings v-if="this._role === Role.OWNER" :id="id" />
         </div>  
 
       </div>

@@ -37,7 +37,12 @@ const WishInput = {
   template:
   /*html*/
   `
-  <input @input="input" v-model="this._title" type="text" placeholder="Title" required>
-  <input @input="input" v-model="this._link"  type="text" placeholder="Link">
+  <div class="control">
+    <input class="input" @input="input" v-model="this._title" type="text" placeholder="Title" required>
+  </div>
+
+  <div class="control">
+    <input class="input" @input="input" v-model="this._link"  type="text" placeholder="Link">
+  </div>  
   `
 }

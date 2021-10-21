@@ -23,9 +23,14 @@ const InviteSettings = {
   template:
   /*html*/
   `
-  <div>
-    <h3>Settings</h3>
-    <button @click="exterminateSafe">Delete invite</button>
+  <div class="container">
+
+    <h3 class="title is-3">Settings</h3>
+    
+    <div class="control">
+      <button class="button" @click="exterminateSafe">Delete invite</button>
+    </div>
+
   </div>
   `
 }
