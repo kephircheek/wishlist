@@ -42,10 +42,19 @@ const ReservationCard = {
   template:
   /*html*/
   `
-  <div>
-    {{ this._title }} | {{ this._link }}
-    <strong>Cancelation code:</strong>
-    <button @click="copyCode">{{ cancellationCode }}</button>
+  <div class="card mb-3">
+    <div class="card-content">
+      <div class="block">
+        <p class="title is-5">{{ this._title }}</p>
+        <p class="subtitle is-7"><a class="text-color-pink" href="{{ this._link }}">{{ this._link }}</a></p>
+        <p class="subtitle is-7">Cancelation code:</p>
+      </div>
+
+      <div class="control">
+        <input class="input" type="text" :value="cancellationCode" readonly>
+      </div>
+      <!-- <button class="button is-static" @click="copyCode">{{ cancellationCode }}</button> -->
+    </div>
   </div>
   `
 }

@@ -37,10 +37,16 @@ const WishInput = {
   template:
   /*html*/
   `
-  <div class="field is-horizontal">
+  <div class="field is-horizontal is-align-items-center">
 
-    <div class="field-label">
-      <label class="label"><i class="fas fa-gift"></i></label>
+    <div class="field-label is-flex-grow-0">
+      <label class="label">
+        <span class="icon-text">
+          <span class="icon">
+            <i class="fas fa-gift"></i>
+          </span>
+        </span>
+      </label>
     </div>
 
     <div class="field-body">
@@ -55,10 +61,16 @@ const WishInput = {
 
   </div>
 
-  <div class="field is-horizontal">
+  <div class="field is-horizontal is-align-items-center">
 
-    <div class="field-label">
-      <label class="label"><i class="fas fa-link"></i></label>
+    <div class="field-label is-flex-grow-0">
+      <label class="label">
+        <span class="icon-text">
+          <span class="icon">
+            <i class="fas fa-link"></i>
+          </span>
+        </span>
+      </label>
     </div>
 
     <div class="field-body">
