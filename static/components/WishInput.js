@@ -37,7 +37,52 @@ const WishInput = {
   template:
   /*html*/
   `
-  <input @input="input" v-model="this._title" type="text" placeholder="Title" required>
-  <input @input="input" v-model="this._link"  type="text" placeholder="Link">
+  <div class="field is-horizontal is-align-items-center">
+
+    <div class="field-label is-flex-grow-0">
+      <label class="label">
+        <span class="icon-text">
+          <span class="icon">
+            <i class="fas fa-gift"></i>
+          </span>
+        </span>
+      </label>
+    </div>
+
+    <div class="field-body">
+
+      <div class="field">
+        <div class="control">
+          <input class="input" @input="input" v-model="this._title" type="text" placeholder="Gift Name" required>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="field is-horizontal is-align-items-center">
+
+    <div class="field-label is-flex-grow-0">
+      <label class="label">
+        <span class="icon-text">
+          <span class="icon">
+            <i class="fas fa-link"></i>
+          </span>
+        </span>
+      </label>
+    </div>
+
+    <div class="field-body">
+
+      <div class="field">
+        <div class="control">
+          <input class="input" @input="input" v-model="this._link"  type="text" placeholder="Link">
+        </div>  
+      </div>
+
+    </div>
+
+  </div>
   `
 }

@@ -13,6 +13,8 @@ const Invite = {
     modified: String,
   },
   components: {
+    'welcome-header': WelcomeHeader,
+    'welcome-footer': WelcomeFooter,
     'invite-card': InviteCard,
     'invite-wishlist': InviteWishlist,
     'invite-settings': InviteSettings,
@@ -43,11 +45,33 @@ const Invite = {
   template:
   /*html*/
   `
-  <div>
-    <invite-card @role="setRole" :role="role" :id="id" :title="title" :modified="modified"/>
-    <invite-wishlist ref="inviteWishlist" :role="this._role" :id="id" @reservation="pushReservation"/>
-    <invite-settings v-if="this._role === Role.OWNER" :id="id" />
-    <reservation-cart ref="reservationCart" @cancellation="updateWishlist"/>
-  </div>
+  <section class="hero is-fullheight">
+
+    <header class="hero-head"><welcome-header/></header>
+
+    <main class="hero-body is-align-items-flex-start">
+
+      <div class="container columns mx-0">
+
+        <div class="column is-4 px-5 py-5 is-flex-direction-column is-justify-content-center">
+          <invite-card @role="setRole" :role="role" :id="id" :title="title" :modified="modified"/>
+        </div>  
+
+        <div class="column is-4 px-5 py-5 is-flex-direction-column is-justify-content-center">
+          <invite-wishlist ref="inviteWishlist" :role="this._role" :id="id" @reservation="pushReservation"/>
+        </div>  
+
+        <div class="column is-4 px-5 py-5 is-flex-direction-column is-justify-content-center is-align-content-space-evenly">
+          <reservation-cart ref="reservationCart" @cancellation="updateWishlist"/>
+          <invite-settings v-if="this._role === Role.OWNER" :id="id" />
+        </div>  
+
+      </div>
+
+    </main>
+
+    <footer class="hero-foot has-background-light"><welcome-footer/></footer>
+
+  </section>
   `,
 }

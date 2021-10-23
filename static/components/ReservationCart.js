@@ -42,10 +42,19 @@ const ReservationCard = {
   template:
   /*html*/
   `
-  <div>
-    {{ this._title }} | {{ this._link }}
-    <strong>Cancelation code:</strong>
-    <button @click="copyCode">{{ cancellationCode }}</button>
+  <div class="card mb-3">
+    <div class="card-content">
+      <div class="block">
+        <p class="title is-5">{{ this._title }}</p>
+        <p class="subtitle is-7"><a class="text-color-pink" href="{{ this._link }}">{{ this._link }}</a></p>
+        <p class="subtitle is-7">Cancelation code:</p>
+      </div>
+
+      <div class="control">
+        <input class="input" type="text" :value="cancellationCode" readonly>
+      </div>
+      <!-- <button class="button is-static" @click="copyCode">{{ cancellationCode }}</button> -->
+    </div>
   </div>
   `
 }
@@ -105,9 +114,24 @@ const ReservationCart = {
   template:
   /*html*/
   `
-  <h3>Reservation Cart</h3>
-  <input v-model="this._cancellationCode" placeholder="Cancellation code"/>
-  <button @click="cancel">Cancel</button>
-  <reservation-card v-for="reservation in this._reservations" :key="reservation.id" v-bind="reservation" />
+  <div class="container mb-5">
+
+    <h3 class="title is-3">Reservation Cart</h3>
+
+    <div class="field has-addons is-justify-content-center">
+      
+      <div class="control is-expanded">
+        <input class="input" v-model="this._cancellationCode" placeholder="Cancellation code"/>
+      </div>
+
+      <div class="control">
+        <button class="button" @click="cancel">Cancel</button>
+      </div>
+
+    </div>
+
+    <reservation-card v-for="reservation in this._reservations" :key="reservation.id" v-bind="reservation" />
+
+  </div>
   `
 }

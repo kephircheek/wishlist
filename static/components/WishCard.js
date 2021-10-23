@@ -144,31 +144,67 @@ const WishCard = {
   /*html*/
   `
   <div>
+
     <div v-if="role === Role.OWNER">
+
       <div @submit="submit" @edit="edit">
-        <div v-if="this._editing" v-click-outside="submit">
-          <wish-input v-bind="card" @input="commit" />
-          <button v-if="!this._archive" @click="unbind">Unbind</button>
-          <button v-else @click="unfulfill">Unfulfill</button>
+
+        <div class="card mb-3" v-if="this._editing" v-click-outside="submit">
+          <div class="card-content">
+            <wish-input v-bind="card" @input="commit" />
+            <button class="button" v-if="!this._archive" @click="unbind">Delete</button>
+            <button class="button" v-else @click="unfulfill">I want it!</button>
+          </div>
         </div>
-        <div v-else v-longpress="edit">
+
+        <div class="card mb-3" v-else v-longpress="edit">
+
+          <div class="card-content">
+            <p class="title is-5">{{ this._title }}</p>
+            <p class="subtitle is-7"><a class="text-color-pink" href="{{ this._link }}">{{ this._link }}</a></p>
+            <p class="subtitle is-7"><date-time :value="this._modified" /></p>
+
+            <button class="button" v-if="!this._archive" @click="fulfill">I got it!</button>
+          </div>
+
+          <!---
           {{ this._title }} |
           {{ this._link }} |
           <date-time :value="this._modified" /> |
           {{ this._relevance }}
           <button v-if="!this._archive" @click="fulfill">Fulfill</button>
+          --->
+          
         </div>
+
       </div>
+
     </div>
-    <div v-if="role === Role.MEMBER && this._relevance && !this._archive">
-      <span>
-        {{ this._title }} |
-        {{ this._link }} |
-        <date-time :value="this._modified" /> |
-        {{ this._relevance }}
-      </span>
-      <button v-if="!this._archive" @click="reserve">Reserve</button>
+
+
+    <div class="card mb-3" v-if="role === Role.MEMBER && this._relevance && !this._archive">
+  
+      <div class="card-content">
+        <p class="title is-5">{{ this._title }}</p>
+        <p class="subtitle is-7"><a class="text-color-pink" href="{{ this._link }}">{{ this._link }}</a></p>
+        <p class="subtitle is-7"><date-time :value="this._modified" /></p>
+           
+              
+            <!---
+            <span> 
+              {{ this._title }} |
+              {{ this._link }} |
+              <date-time :value="this._modified" /> |
+              {{ this._relevance }} 
+            </span>
+            --->
+
+        <button class="button" v-if="!this._archive" @click="reserve">Reserve</button>
+
+      </div>
+  
     </div>
+
   </div>
   `
 }

@@ -1,16 +1,25 @@
+/* Givazza colors */
+.text-color-pink {
+  color: #FA26A0;
+}
+
+.text-color-black {
+  color: #393939;
+}
+
+.text-color-grey {
+  color: #C4C4C4;
+}
+
+.text-color-grey-light {
+  color: #F9F9F9;
+}
+
 .welcome-header {
-  height: 30vh;
-  background-color: lightyellow;
-  display: grid;
-  align-content: end;
 }
 
 .welcome-quickstart {
-  height: 60vh;
-  background-color: lightgreen;
 }
 
 .welcome-footer {
-  height: 10vh;
-  background-color: cyan;
 }

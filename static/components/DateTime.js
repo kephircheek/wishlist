@@ -24,7 +24,6 @@ const InputDateTime = {
   template:
   /*html*/
   `
-  {{ [this._date, this._time] }}
   <input @input="input" type="date" v-model="this._date" />
   <input @input="input" type="time" v-model="this._time" />
   `

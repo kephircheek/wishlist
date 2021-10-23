@@ -36,7 +36,22 @@ const WishForm = {
   template:
   /*html*/
   `
-  <wish-input @input="commit" ref="input" />
-  <button @click="submit">Submit</button>
+  <div class="card mb-3">
+
+    <div class="card-content">
+
+      <wish-input @input="commit" ref="input" />
+
+      <div class="field">
+
+        <div class="control">
+          <button class="button" @click="submit">Submit</button>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
   `
 }

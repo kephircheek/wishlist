@@ -16,8 +16,10 @@ const Welcome = {
   template: 
   /*html*/
   `
-  <header><welcome-header/></header>
-  <main><welcome-quickstart/></main>
-  <footer><welcome-footer/></footer>
+  <section class="hero is-fullheight">
+    <header class="hero-head"><welcome-header/></header>
+    <main class="hero-body py-0"><welcome-quickstart/></main>
+    <footer class="hero-foot has-background-light"><welcome-footer/></footer>
+  </section>
   `
 }
