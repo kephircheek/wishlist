@@ -1,6 +1,7 @@
 const WishCard = {
   components: {
     'wish-input': WishInput,
+    'wish-link': WishLink,
   },
   props: {
     role: {
@@ -153,7 +154,7 @@ const WishCard = {
         </div>
         <div v-else v-longpress="edit">
           {{ this._title }} |
-          {{ this._link }} |
+          <wish-link :url="this._link" /> |
           <date-time :value="this._modified" /> |
           {{ this._relevance }}
           <button v-if="!this._archive" @click="fulfill">Fulfill</button>
@@ -163,7 +164,7 @@ const WishCard = {
     <div v-if="role === Role.MEMBER && this._relevance && !this._archive">
       <span>
         {{ this._title }} |
-        {{ this._link }} |
+        <wish-link :url="this._link" /> |
         <date-time :value="this._modified" /> |
         {{ this._relevance }}
       </span>
