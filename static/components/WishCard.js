@@ -28,7 +28,7 @@ const WishCard = {
       _archive: this.archive,
       _title: this.title,
       _link: this.link,
-      _modified: new Date(this.modified + 'Z'),
+      _modified: this.modified instanceof Date ? this.modified : new Date(this.modified + 'Z'),
       _relevance: this.relevance,
       _cost: this.cost,
     }
