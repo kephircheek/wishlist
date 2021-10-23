@@ -37,12 +37,40 @@ const WishInput = {
   template:
   /*html*/
   `
-  <div class="control">
-    <input class="input" @input="input" v-model="this._title" type="text" placeholder="Title" required>
+  <div class="field is-horizontal">
+
+    <div class="field-label">
+      <label class="label"><i class="fas fa-gift"></i></label>
+    </div>
+
+    <div class="field-body">
+
+      <div class="field">
+        <div class="control">
+          <input class="input" @input="input" v-model="this._title" type="text" placeholder="Gift Name" required>
+        </div>
+      </div>
+
+    </div>
+
   </div>
 
-  <div class="control">
-    <input class="input" @input="input" v-model="this._link"  type="text" placeholder="Link">
-  </div>  
+  <div class="field is-horizontal">
+
+    <div class="field-label">
+      <label class="label"><i class="fas fa-link"></i></label>
+    </div>
+
+    <div class="field-body">
+
+      <div class="field">
+        <div class="control">
+          <input class="input" @input="input" v-model="this._link"  type="text" placeholder="Link">
+        </div>  
+      </div>
+
+    </div>
+
+  </div>
   `
 }

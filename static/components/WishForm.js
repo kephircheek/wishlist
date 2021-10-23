@@ -36,12 +36,20 @@ const WishForm = {
   template:
   /*html*/
   `
-  <div class="field is-grouped is-grouped-multiline">
+  <div class="card mb-3">
 
-    <wish-input @input="commit" ref="input" />
+    <div class="card-content">
 
-    <div class="control">
-      <button class="button" @click="submit">Submit</button>
+      <wish-input @input="commit" ref="input" />
+
+      <div class="field">
+
+        <div class="control">
+          <button class="button" @click="submit">Submit</button>
+        </div>
+
+      </div>
+
     </div>
 
   </div>
