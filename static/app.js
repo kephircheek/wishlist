@@ -1,21 +1,24 @@
 const app = Vue.createApp({
-  data() {
-    return {
-      model: axios.create({
-        //baseURL: `http://127.0.0.1:8000/`,
-        //baseURL: `https://wishwishwish.herokuapp.com/`,
-        baseURL: `http://library.kringe.space/`,
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        withCredentials: true,
-      }),
-    }
-  },
   created() {
     // ping server to wake up because heroku
     this.model.get()
     .catch(this.reporter)
+  },
+  computed: {
+    accessToken() {
+      let token =  this.$cookie.get('accessToken') || uuidv4().split("-").join("")
+      this.$cookie.set('accessToken', token)
+      return token;
+    },
+    model() {
+      return axios.create({
+        baseURL: `https://liebelib.herokuapp.com/`,
+        headers: {
+          'X-Session-ID': this.accessToken,
+          'Content-Type': 'application/json'
+        }
+      })
+    },
   },
   methods: {
     reporter: (error) => {
@@ -36,6 +39,7 @@ const app = Vue.createApp({
 })
 
 app.use(router)
+app.use(vCookie)
 
 app.directive('focus', vFocus)
 app.directive('click-outside', vClickOutside)
