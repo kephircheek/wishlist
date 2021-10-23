@@ -39,7 +39,8 @@ const DateTime = {
   },
   data() {
     return {
-      formatFromNow: true,
+      isFromNowFormat: true,
+      format: 'ddd, DD MMM YYYY HH:mm',
     }
   },
   computed: {
@@ -49,15 +50,15 @@ const DateTime = {
   },
   methods: {
     switchFormat() {
-      this.formatFromNow = !this.formatFromNow
+      this.isFromNowFormat = !this.isFromNowFormat
     },
   },
   template:
   /*html*/
   `
   <span @click="switchFormat">
-    <span v-if="formatFromNow">{{ datetime.fromNow() }}</span>
-    <span v-else>{{ datetime }}</span>
+    <span v-if="isFromNowFormat">{{ datetime.fromNow() }}</span>
+    <span v-else>{{ datetime.format(this.format) }}</span>
   </span>
   `
 }
