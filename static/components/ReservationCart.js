@@ -1,4 +1,7 @@
 const ReservationCard = {
+  components: {
+    "input-copy-to-clipboard": InputCopyToClipboard
+  },
   props: {
     id: {
       type: String,
@@ -34,10 +37,6 @@ const ReservationCard = {
       })
       .catch(this.$root.reporter);
     },
-    copyCode() {
-      navigator.clipboard.writeText(this.cancellationCode);
-      window.alert("Copied to clipboard")
-    },
   },
   template:
   /*html*/
@@ -45,7 +44,7 @@ const ReservationCard = {
   <div>
     {{ this._title }} | {{ this._link }}
     <strong>Cancelation code:</strong>
-    <button @click="copyCode">{{ cancellationCode }}</button>
+    <input-copy-to-clipboard :value="this.cancellationCode" readonly />
   </div>
   `
 }
